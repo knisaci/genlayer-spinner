@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GenLayer Consensus Nodes Spinner</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; }
+    .section {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .light { background: #F5F5F5; color: #070707; }
+    .dark  { background: #070707; color: #F5F5F5; }
+    .gl-spinner {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+    .gl-spinner svg {
+      width: 100%;
+      height: 100%;
+      animation: gl-rotate 1.6s linear infinite;
+    }
+    @keyframes gl-rotate { to { transform: rotate(360deg); } }
+    .core { fill: #110FFF; }
+    .node {
+      fill: #110FFF;
+      animation: gl-pulse 1.6s ease-in-out infinite;
+    }
+    .node:nth-child(2) { animation-delay: 0s; }
+    .node:nth-child(3) { animation-delay: 0.2s; }
+    .node:nth-child(4) { animation-delay: 0.4s; }
+    .node:nth-child(5) { animation-delay: 0.6s; }
+    @keyframes gl-pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="section light">
+    <p>Light background</p>
+    <div class="gl-spinner">
+      <svg viewBox="0 0 48 48">
+        <circle class="core" cx="24" cy="24" r="3.5"/>
+        <circle class="node" cx="24" cy="7" r="3"/>
+        <circle class="node" cx="41" cy="24" r="3"/>
+        <circle class="node" cx="24" cy="41" r="3"/>
+        <circle class="node" cx="7" cy="24" r="3"/>
+      </svg>
+    </div>
+  </div>
+  <div class="section dark">
+    <p>Dark background</p>
+    <div class="gl-spinner">
+      <svg viewBox="0 0 48 48">
+        <circle class="core" cx="24" cy="24" r="3.5"/>
+        <circle class="node" cx="24" cy="7" r="3"/>
+        <circle class="node" cx="41" cy="24" r="3"/>
+        <circle class="node" cx="24" cy="41" r="3"/>
+        <circle class="node" cx="7" cy="24" r="3"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <style>
+    .core { fill: #110FFF; }
+    .node {
+      fill: #110FFF;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    .node:nth-child(2) { animation-delay: 0s; }
+    .node:nth-child(3) { animation-delay: 0.2s; }
+    .node:nth-child(4) { animation-delay: 0.4s; }
+    .node:nth-child(5) { animation-delay: 0.6s; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    svg { animation: rotate 1.6s linear infinite; }
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <circle class="core" cx="24" cy="24" r="3.5"/>
+  <circle class="node" cx="24" cy="7" r="3"/>
+  <circle class="node" cx="41" cy="24" r="3"/>
+  <circle class="node" cx="24" cy="41" r="3"/>
+  <circle class="node" cx="7" cy="24" r="3"/>
+</svg>
